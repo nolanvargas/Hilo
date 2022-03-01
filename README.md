@@ -26,12 +26,9 @@ Design:
 	once drawn goes in "dicard" and cannot be drawn again.
 	Resets on new game.
 	Could be done as a list, list of lists, or dict. (Could use pop for lists)
-
-Player class
-	Keeps track of points
-	Resets on new game
+	Each instance can have a dictionary, first item being the suit, second being the nemerical card value.
 	
-Game function
+Director Class
 	Higher order function, determine outcome with inner functions,
 	has ways to end game when no draw.
 	ends game when points reach 0 or below
@@ -39,9 +36,14 @@ Game function
 	Gets input from player if higher or lower
 	Determines points
 	Awards points depending on the outcome of the player's choice.
+	Keeps track of points
+	Resets on new game
 	
 main function
 	start game,
 	restart game, 
 	exit game
-	run game
+	run 
+	
+Add a CSV to potentially make a high-score scoreboard. Using initials in case multiple peaople play.
+
