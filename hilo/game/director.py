@@ -28,12 +28,16 @@ class Director:
 
     def get_keep_playing(self):
 
-        self.keep_playing = input('Do you want to keep playing? [y/n]: ')
-        if self.keep_playing.lower() == 'y':
-            self.is_playing = True
+        if self.is_playing == True:
+            self.keep_playing = input('Do you want to keep playing? [y/n]: ')
+            if self.keep_playing.lower() == 'y':
+                self.is_playing = True
+            else:
+                self.is_playing = False
+                print(f'You decided to end the game with {self.points} points. Your score is: {self.score}')
 
         else:
-            self.is_playing = False
+            print(f'The game is over, your points reached 0. Your score is: {self.score}')
 
 
     def do_first_card(self):
@@ -52,10 +56,12 @@ class Director:
 
         if (self.first_card > self.second_card) and self.high_or_low.lower() == 'l':
             self.points += 100
+            self.score += 1
             print(f'Your score is: {self.points}')
         
         if (self.first_card < self.second_card) and self.high_or_low.lower() == 'h':
             self.points += 100
+            self.score += 1
             print(f'Your score is: {self.points}')
             
         else:
