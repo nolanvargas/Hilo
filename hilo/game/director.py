@@ -13,8 +13,9 @@ class Director:
 
     def start_game(self):
 
+        self.do_first_card()
+
         while self.is_playing == True:
-            self.do_first_card()
             self.get_high_low()
             self.do_second_card()
             self.update()
@@ -58,15 +59,14 @@ class Director:
             self.points += 100
             self.score += 1
             print(f'Your score is: {self.points}')
-        
-        if (self.first_card < self.second_card) and self.high_or_low.lower() == 'h':
+        elif (self.first_card < self.second_card) and self.high_or_low.lower() == 'h':
             self.points += 100
             self.score += 1
             print(f'Your score is: {self.points}')
-            
         else:
             self.points -= 75
             if self.points <= 0:
                 self.is_playing = False
+            print(f'Your score is: {self.points}')
         
 
