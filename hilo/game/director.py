@@ -52,6 +52,7 @@ class Director:
 
             else:
                 print(f'The game is over, your points reached 0. Your score is: {self.score}')
+                break
 
 
     def do_first_card(self):
