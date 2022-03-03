@@ -65,6 +65,7 @@ class Director:
 
         self.second_card = self.cards.draw()
         print(f'The next card is: {self.second_card}')
+        print(f"\n ____\n|⯁   |\n|  {self.second_card} |\n|   ⯁|\n ¯¯¯¯") #card picture
 
     def do_swap_cards(self): #Swaps the cards around to properly compare the values together, instead of having first card be the same card every time.
 
