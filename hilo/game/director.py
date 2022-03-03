@@ -14,8 +14,13 @@ class Director:
     def start_game(self):
 
         self.do_first_card()
+        self.get_high_low()
+        self.do_second_card()
+        self.update()
+        self.get_keep_playing()
 
         while self.is_playing == True:
+            self.do_swap_cards()
             self.get_high_low()
             self.do_second_card()
             self.update()
@@ -51,6 +56,10 @@ class Director:
 
         self.second_card = self.cards.draw()
         print(f'The next card is: {self.second_card}')
+
+    def do_swap_cards(self): #Swaps the cards around to properly compare the values together, instead of having first card be the same card every time.
+
+        self.first_card = self.second_card
 
 
     def update(self):
